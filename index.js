@@ -1,13 +1,12 @@
-const puppeteer = require ('puppeteer');
-const sleep = require('./sleep');
+require('dotenv').config();
+const puppeteer = require('puppeteer');
+const sleep = require('./anki-automation/sleep');
 const fs = require('fs');
-
 
 const cards = JSON.parse(fs.readFileSync('./cards.json', 'utf8'));
 
 (async () => {
     const browser = await puppeteer.launch({headless: false});
-    
     const page = await browser.newPage();
 
     await page.goto('https://ankiweb.net/account/login');
@@ -16,13 +15,13 @@ const cards = JSON.parse(fs.readFileSync('./cards.json', 'utf8'));
     
     await page.waitForSelector('input.form-control.svelte-1ak1s42');
 
-    await page.type('input.form-control.svelte-1ak1s42', 'pedrohpussente@gmail.com');
+    await page.type('input.form-control.svelte-1ak1s42', process.env.ANKI_EMAIL);
 
     await page.keyboard.press("Tab");
 
     await sleep(5000);
     
-    await page.keyboard.type('Ph25821*4352');
+    await page.keyboard.type(process.env.ANKI_PASSWORD);
     
     await sleep(5000);
     
@@ -36,8 +35,7 @@ const cards = JSON.parse(fs.readFileSync('./cards.json', 'utf8'));
 
     await sleep(3000);
 
-    for(card of cards) {
-        
+    for (const card of cards) {
         await page.keyboard.type(card.pergunta);
         
         await sleep(3000);
@@ -65,7 +63,6 @@ const cards = JSON.parse(fs.readFileSync('./cards.json', 'utf8'));
         await sleep(3000);
 
         await page.keyboard.press("F5");
-            
     }
 
     await browser.close();
