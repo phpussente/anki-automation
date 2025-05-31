@@ -1,0 +1,402 @@
+[
+    {
+        "pergunta": "Quais são os tipos numéricos suportados pelo PostgreSQL e suas características principais?",
+        "resposta": "Os tipos numéricos suportados pelo PostgreSQL incluem smallint (2 bytes, faixa de -32.768 a +32.767), integer (4 bytes, faixa de -2.147.483.648 a +2.147.483.647), bigint (8 bytes, faixa de -9.223.372.036.854.775.808 a +9.223.372.036.854.775.807), decimal e numeric (precisão especificada pelo usuário, até 131.072 dígitos antes da vírgula e 16.383 dígitos depois da vírgula), real (4 bytes, precisão de 6 dígitos), double precision (8 bytes, precisão de 15 dígitos), serial (inteiro autoincremental de 4 bytes) e bigserial (inteiro autoincremental de 8 bytes).",
+        "tag": "Banco de Dados - PostgreSQL - Tipos Numéricos"
+    },
+    {
+        "pergunta": "Como o tipo de dado 'money' é utilizado no PostgreSQL e qual é o seu intervalo de valores?",
+        "resposta": "O tipo de dado 'money' no PostgreSQL armazena valores monetários com precisão fracionária fixa, determinada pela configuração 'lc_monetary'. Ele aceita entradas em vários formatos, como números inteiros ou valores formatados como moeda, e seu intervalo vai de -92.233.720.368.547.758,08 a +92.233.720.368.547.758,07, utilizando 8 bytes de armazenamento.",
+        "tag": "Banco de Dados - PostgreSQL - Tipos Monetários"
+    },
+    {
+        "pergunta": "Qual é a diferença entre 'character(n)' e 'character varying(n)' no PostgreSQL?",
+        "resposta": "No PostgreSQL, 'character(n)' ou 'char(n)' é um tipo de dado de comprimento fixo que armazena uma sequência de caracteres de tamanho 'n', completando com espaços em branco se a string for menor que 'n'. Já 'character varying(n)' ou 'varchar(n)' é de comprimento variável, podendo armazenar até 'n' caracteres, sem preencher espaços adicionais.",
+        "tag": "Banco de Dados - PostgreSQL - Tipos de Caracteres"
+    },
+    {
+        "pergunta": "O que diferencia o tipo de dado 'text' dos tipos 'character' e 'character varying' no PostgreSQL?",
+        "resposta": "O tipo 'text' no PostgreSQL armazena sequências de caracteres de qualquer tamanho, sendo diferente dos tipos 'character' e 'character varying', que limitam o número de caracteres a um valor 'n'. Embora 'text' não seja um tipo padrão do SQL, é amplamente utilizado no PostgreSQL por sua flexibilidade.",
+        "tag": "Banco de Dados - PostgreSQL - Tipos de Caracteres"
+    },
+    {
+        "pergunta": "Como os dados binários são armazenados no PostgreSQL e quais são os formatos de entrada e saída suportados?",
+        "resposta": "No PostgreSQL, dados binários são armazenados no tipo 'bytea', que suporta dois formatos de entrada e saída: o formato 'hex', que codifica os dados como dígitos hexadecimais por byte, e o formato 'escape', que utiliza uma representação ASCII com caracteres especiais para valores binários. O formato 'hex' é compatível com vários aplicativos e tende a ser mais rápido.",
+        "tag": "Banco de Dados - PostgreSQL - Tipos Binários"
+    },
+    {
+        "pergunta": "Quais são as principais funções do tipo de dado boolean no PostgreSQL?",
+        "resposta": "O tipo boolean no PostgreSQL pode ter três estados: 'true', 'false' e 'unknown', sendo este último representado como NULL. Ele aceita entradas como 'true', 'yes', 'on', '1' para 'true' e 'false', 'no', 'off', '0' para 'false'. Ao ser emitido, o boolean retorna 't' para verdadeiro e 'f' para falso.",
+        "tag": "Banco de Dados - PostgreSQL - Boolean"
+    },
+    {
+        "pergunta": "Como o PostgreSQL trata a entrada e formatação de tipos de data e hora?",
+        "resposta": "O PostgreSQL aceita uma grande variedade de formatos de entrada de data e hora, além de permitir a especificação de precisão opcional nos campos de segundo para tipos como time, timestamp e interval. Ele também oferece suporte para data e hora com e sem fuso horário, permitindo manipulações detalhadas desses dados.",
+        "tag": "Banco de Dados - PostgreSQL - Data e Hora"
+    },
+    {
+        "pergunta": "Quais são as diferenças entre os tipos 'timestamp' e 'time' no PostgreSQL?",
+        "resposta": "'Timestamp' armazena tanto data quanto hora, com ou sem fuso horário, enquanto 'time' armazena apenas a hora, com ou sem fuso horário. Ambos podem ter precisão fracionária opcional para o campo de segundos, e o intervalo de valores para ambos tipos vai de 4713 a.C. a 294276 d.C.",
+        "tag": "Banco de Dados - PostgreSQL - Data e Hora"
+    },
+    {
+        "pergunta": "Quais tipos de objetos geométricos são suportados pelo PostgreSQL?",
+        "resposta": "O PostgreSQL suporta vários tipos de dados geométricos, como ponto (point), linha infinita (line), segmento de linha (lseg), caixa retangular (box), caminho fechado (path), caminho aberto (path), polígono (polygon) e círculo (circle), permitindo operações geométricas como escala, translação e rotação.",
+        "tag": "Banco de Dados - PostgreSQL - Tipos Geométricos"
+    },
+    {
+        "pergunta": "O que são os pseudo-tipos no PostgreSQL e como eles são utilizados?",
+        "resposta": "Os pseudo-tipos no PostgreSQL não são tipos reais de dados e não podem ser armazenados em tabelas. Eles são utilizados para definir parâmetros ou retornos em funções, como 'void' para funções que não retornam valores, ou 'any' que aceita qualquer tipo de dado como entrada.",
+        "tag": "Banco de Dados - PostgreSQL - Pseudo-tipos"
+    },
+    {
+        "pergunta": "Qual é a função do comando INSERT no SQL?",
+        "resposta": "O comando INSERT é usado para preencher uma tabela com linhas. Ele insere novos dados nas colunas de uma tabela, sendo necessário garantir que os valores não numéricos estejam entre aspas simples.",
+        "tag": "Banco de Dados - SQL - INSERT"
+    },
+    {
+        "pergunta": "Como você pode inserir valores em uma tabela sem precisar listar as colunas na ordem original?",
+        "resposta": "Você pode listar explicitamente as colunas ao usar o comando INSERT, permitindo uma ordem diferente ou até omitir algumas colunas. Isso é útil quando você não conhece todos os valores de entrada ou quer garantir que a inserção esteja correta.",
+        "tag": "Banco de Dados - SQL - INSERT"
+    },
+    {
+        "pergunta": "É possível inserir múltiplas linhas em um único comando INSERT? Explique.",
+        "resposta": "Sim, é possível inserir várias linhas em um único comando INSERT. Isso economiza tempo e facilita a inserção em massa de dados em uma tabela.",
+        "tag": "Banco de Dados - SQL - INSERT"
+    },
+    {
+        "pergunta": "Como o comando UPDATE funciona no SQL?",
+        "resposta": "O comando UPDATE permite atualizar dados existentes em uma tabela. Ele requer o nome da tabela, a coluna a ser atualizada, o novo valor e a especificação de quais linhas serão alteradas, caso contrário, todas as linhas podem ser atualizadas.",
+        "tag": "Banco de Dados - SQL - UPDATE"
+    },
+    {
+        "pergunta": "Quais cuidados são necessários ao utilizar o comando DELETE?",
+        "resposta": "O comando DELETE pode remover linhas de uma tabela. No entanto, é importante ter cuidado, pois, sem uma qualificação específica, ele remove todas as linhas da tabela, deixando-a vazia.",
+        "tag": "Banco de Dados - SQL - DELETE"
+    },
+    {
+        "pergunta": "Como o comando SELECT funciona para recuperar dados de uma tabela?",
+        "resposta": "O comando SELECT é usado para consultar dados de uma tabela. Ele é dividido em duas partes: a lista de seleção, que define as colunas a serem retornadas, e as tabelas de onde os dados serão recuperados. A consulta também pode incluir restrições usando cláusulas opcionais.",
+        "tag": "Banco de Dados - SQL - SELECT"
+    },
+    {
+        "pergunta": "O que faz a cláusula WHERE em uma consulta SQL?",
+        "resposta": "A cláusula WHERE adiciona uma qualificação a uma consulta SQL, permitindo que apenas as linhas que satisfazem uma condição booleana específica sejam retornadas.",
+        "tag": "Banco de Dados - SQL - WHERE"
+    },
+    {
+        "pergunta": "Como os resultados de uma consulta podem ser ordenados no SQL?",
+        "resposta": "Os resultados de uma consulta podem ser ordenados usando a cláusula ORDER BY, que organiza os dados em ordem crescente (ASC) ou decrescente (DESC) com base em uma ou mais colunas.",
+        "tag": "Banco de Dados - SQL - ORDER BY"
+    },
+    {
+        "pergunta": "Qual é a função do DISTINCT em uma consulta SQL?",
+        "resposta": "O DISTINCT é usado em consultas SQL para garantir que apenas valores distintos, ou seja, não duplicados, sejam retornados. Isso é útil para evitar a repetição de linhas em um resultado.",
+        "tag": "Banco de Dados - SQL - DISTINCT"
+    },
+    {
+        "pergunta": "Como você escreveria uma consulta SQL para retornar todos os nomes de alunos em ordem alfabética crescente?",
+        "resposta": "Para retornar os nomes de alunos em ordem alfabética crescente, o comando SQL seria: SELECT NOME FROM aluno ORDER BY nome ASC. O ASC indica que a ordenação será em ordem crescente.",
+        "tag": "Banco de Dados - SQL - SELECT - ORDER BY"
+    },
+    {
+        "pergunta": "Quais são os instrumentos da Política de Segurança Cibernética do Poder Judiciário (PSEC-PJ)?",
+        "resposta": "Os instrumentos da PSEC-PJ são: a Estratégia Nacional de Segurança Cibernética do Poder Judiciário (ENSEC-PJ), o Protocolo de Prevenção de Incidentes Cibernéticos no âmbito do Poder Judiciário (PPINC-PJ), o Protocolo de Gerenciamento de Crises Cibernéticas (PGCC-PJ) e o Protocolo de Investigação para Ilícitos Cibernéticos (PIILC-PJ).",
+        "tag": "Legislação - CNJ 396/2021 - PSEC-PJ"
+    },
+    {
+        "pergunta": "Qual é a função do Protocolo de Prevenção de Incidentes Cibernéticos (PPINC-PJ)?",
+        "resposta": "O PPINC-PJ contempla um conjunto de diretrizes para a prevenção a incidentes cibernéticos no mais alto nível, que devem ser adotadas por todos os órgãos do Poder Judiciário, exceto o STF.",
+        "tag": "Legislação - CNJ 396/2021 - PPINC-PJ"
+    },
+    {
+        "pergunta": "Qual é o objetivo do Protocolo de Gerenciamento de Crises Cibernéticas (PGCC-PJ)?",
+        "resposta": "O objetivo do PGCC-PJ é contribuir para a resiliência corporativa por meio de respostas rápidas e eficientes a incidentes que comprometem a integridade, confidencialidade ou disponibilidade dos ativos de informação do Poder Judiciário.",
+        "tag": "Legislação - CNJ 396/2021 - PGCC-PJ"
+    },
+    {
+        "pergunta": "Qual é a função do Protocolo de Investigação para Ilícitos Cibernéticos (PIILC-PJ)?",
+        "resposta": "O PIILC-PJ tem como finalidade estabelecer procedimentos para coleta e preservação de evidências em casos de ilícitos cibernéticos, além de comunicar fatos penalmente relevantes aos órgãos competentes para investigação e persecução penal.",
+        "tag": "Legislação - CNJ 396/2021 - PIILC-PJ"
+    },
+    {
+        "pergunta": "O que deve ser feito quando um incidente cibernético não pode ser mitigado rapidamente?",
+        "resposta": "Quando um incidente cibernético não pode ser mitigado rapidamente e tende a durar por tempo indeterminado, o Protocolo de Gerenciamento de Crises Cibernéticas (PGCC-PJ) deve ser aplicado, com ações responsivas complementando o PPINC-PJ.",
+        "tag": "Legislação - CNJ 396/2021 - PGCC-PJ"
+    },
+    {
+        "pergunta": "O que acontece quando um incidente é considerado uma crise cibernética no Poder Judiciário?",
+        "resposta": "Quando um incidente é considerado uma crise cibernética, o Comitê de Crise deve ser acionado, de acordo com o Protocolo de Gerenciamento de Incidentes e de Crises Cibernéticas.",
+        "tag": "Legislação - CNJ 396/2021 - Crises Cibernéticas"
+    },
+    {
+        "pergunta": "Quais ações devem ser incluídas na Política de Segurança da Informação de cada tribunal, exceto o STF?",
+        "resposta": "Cada tribunal deve incluir ações como gestão dos ativos de informação, criação de controles para tratamento de informações restritas, treinamento contínuo de profissionais de segurança cibernética, e requisitos mínimos de segurança em contratações e acordos com outros órgãos.",
+        "tag": "Legislação - CNJ 396/2021 - Segurança da Informação"
+    },
+    {
+        "pergunta": "Como os tribunais devem lidar com a criptografia e a assinatura eletrônica de documentos?",
+        "resposta": "Os tribunais devem utilizar soluções de criptografia e ampliar o uso de assinatura eletrônica, conforme estabelecido em legislações específicas, para aumentar a segurança da informação.",
+        "tag": "Legislação - CNJ 396/2021 - Criptografia"
+    },
+    {
+        "pergunta": "Quem aprova os Manuais de Referência para o gerenciamento e controle de segurança cibernética no Poder Judiciário?",
+        "resposta": "Os Manuais de Referência para o gerenciamento e controle de segurança cibernética são aprovados por ato do Presidente do Conselho Nacional de Justiça (CNJ).",
+        "tag": "Legislação - CNJ 396/2021 - Manuais de Referência"
+    },
+    {
+        "pergunta": "Qual é a responsabilidade dos tribunais em relação à comunicação das ações de segurança da informação?",
+        "resposta": "Os tribunais são responsáveis por comunicar e articular as ações de segurança da informação com a alta administração do órgão, garantindo a integração das políticas de segurança no ambiente institucional.",
+        "tag": "Legislação - CNJ 396/2021 - Comunicação de Segurança"
+    },
+    {
+        "pergunta": "O que é a coerência interna (ou textual) e a coerência pragmática?",
+        "resposta": "A coerência interna, ou textual, refere-se à adequação entre os sentidos das partes do texto. Já a coerência pragmática é quando o sentido produzido no texto corresponde a um dado do mundo real.",
+        "tag": "Interpretação de Texto - Coerência Textual"
+    },
+    {
+        "pergunta": "Qual é a diferença entre coerência e sentido em um texto?",
+        "resposta": "Coerência vai além do significado das palavras e frases, exigindo a articulação correta das ideias no texto. Já o sentido está relacionado ao significado das palavras isoladamente, sem necessariamente levar em conta a conexão lógica entre elas.",
+        "tag": "Interpretação de Texto - Coerência vs Sentido"
+    },
+    {
+        "pergunta": "Por que a frase 'Henrique cozinha muito bem, mas ninguém gosta de sua comida' é incoerente?",
+        "resposta": "A frase é incoerente porque apresenta uma contradição interna: se Henrique cozinha muito bem, é esperado que as pessoas gostem de sua comida, o que não ocorre, comprometendo a coerência interna.",
+        "tag": "Interpretação de Texto - Coerência Interna"
+    },
+    {
+        "pergunta": "O que é a incoerência pragmática e como o exemplo 'Ana gosta de acordar bem cedo para ver o sol nascer no Oeste' ilustra esse conceito?",
+        "resposta": "A incoerência pragmática ocorre quando o texto não condiz com a realidade. No exemplo, a frase é incoerente porque, no mundo real, o sol nasce no Leste, e não no Oeste.",
+        "tag": "Interpretação de Texto - Coerência Pragmática"
+    },
+    {
+        "pergunta": "Por que a ausência do artigo definido 'os' diante de 'direitos' no Art. 7º da Constituição Federal é coerente?",
+        "resposta": "A ausência do artigo definido 'os' em 'direitos' indica que o termo está sendo utilizado em sentido geral, o que é adequado no contexto do texto constitucional. Se fosse usado o artigo definido, o sentido seria mais restrito, comprometendo a coerência.",
+        "tag": "Interpretação de Texto - Coerência na Constituição"
+    },
+    {
+        "pergunta": "A substituição da forma verbal 'tem sido' por 'é' em um texto alteraria a coerência? Explique.",
+        "resposta": "A substituição de 'tem sido' por 'é' alteraria o sentido do texto, já que 'tem sido' ressalta um caráter contínuo e constante, enquanto 'é' indicaria algo presente, mas sem a mesma continuidade. A coerência seria mantida, mas o sentido mudaria.",
+        "tag": "Interpretação de Texto - Coerência Verbal"
+    },
+    {
+        "pergunta": "O que são mecanismos de coesão referencial? Cite exemplos.",
+        "resposta": "Mecanismos de coesão referencial são recursos que garantem a continuidade do texto ao fazer referência a elementos já mencionados ou que serão mencionados. Exemplos incluem anáfora, catáfora, dêixis, substituição, hiperonímia e hiponímia.",
+        "tag": "Interpretação de Texto - Coesão Referencial"
+    },
+    {
+        "pergunta": "Como o uso inadequado de conectivos pode afetar a coesão sequencial de um texto?",
+        "resposta": "O uso inadequado de conectivos pode comprometer a coesão sequencial, pois eles são responsáveis por estabelecer relações lógicas entre as partes do texto. Se usados incorretamente, essas relações podem se perder, prejudicando a clareza e fluidez das ideias.",
+        "tag": "Interpretação de Texto - Coesão Sequencial"
+    },
+    {
+        "pergunta": "Qual é a importância de observar a articulação das ideias no texto para garantir a coerência?",
+        "resposta": "Observar a articulação das ideias é essencial para garantir a coerência, pois não basta que as palavras e frases tenham sentido isolado. As ideias devem estar conectadas de forma lógica e adequada ao contexto, assegurando a clareza do texto como um todo.",
+        "tag": "Interpretação de Texto - Articulação das Ideias"
+    },
+    {
+        "pergunta": "A substituição dos verbos 'iam' e 'serviam' por 'iriam' e 'serviriam' preserva a coerência do texto? Justifique.",
+        "resposta": "Sim, a substituição de 'iam' e 'serviam' por 'iriam' e 'serviriam' preserva a coerência do texto, pois ambas as formas verbais mantêm o sentido e a correção gramatical. No entanto, a mudança sutil pode alterar a nuance temporal, mas sem comprometer a coerência global.",
+        "tag": "Interpretação de Texto - Substituição Verbal"
+    },
+    {
+        "pergunta": "O que é um deadlock em sistemas operacionais?",
+        "resposta": "Deadlock é uma situação em que dois ou mais processos ficam bloqueados, cada um aguardando que o outro libere um recurso que nunca estará disponível, impedindo que os processos envolvidos continuem sua execução.",
+        "tag": "Sistemas Operacionais - Deadlock"
+    },
+    {
+        "pergunta": "Quais são as quatro condições necessárias para a ocorrência de um deadlock?",
+        "resposta": "As quatro condições necessárias para que ocorra um deadlock são: 1. Exclusão mútua: cada recurso pode ser utilizado por apenas um processo de cada vez; 2. Posse e espera: os processos retêm recursos ao mesmo tempo em que aguardam por novos; 3. Não-preempção: os recursos não podem ser tomados de um processo; 4. Espera circular: há uma cadeia de processos, onde cada um espera por um recurso que o próximo processo da cadeia retém.",
+        "tag": "Sistemas Operacionais - Condições para Deadlock"
+    },
+    {
+        "pergunta": "Como o algoritmo do banqueiro ajuda a evitar deadlocks?",
+        "resposta": "O algoritmo do banqueiro ajuda a evitar deadlocks ao solicitar que os processos informem o número máximo de cada tipo de recurso que precisarão durante sua execução. O sistema, então, verifica se é seguro alocar esses recursos com base no estado atual de alocação, evitando a formação de ciclos de espera que poderiam causar um deadlock.",
+        "tag": "Sistemas Operacionais - Algoritmo do Banqueiro"
+    },
+    {
+        "pergunta": "O que é a estratégia de tratamento de deadlock chamada Algoritmo da Avestruz?",
+        "resposta": "O Algoritmo da Avestruz é uma estratégia de tratamento de deadlock em que o sistema opta por ignorar o problema devido à baixa probabilidade de ocorrência ou ao alto custo de sua resolução. Essa abordagem é utilizada quando o risco de deadlock é considerado aceitável e os custos de prevenção ou tratamento são mais elevados.",
+        "tag": "Sistemas Operacionais - Algoritmo da Avestruz"
+    },
+    {
+        "pergunta": "Quais são as estratégias de tratamento de deadlocks?",
+        "resposta": "As estratégias de tratamento de deadlocks incluem: 1. Ignorar o problema (Algoritmo da Avestruz); 2. Detecção e recuperação, onde o sistema monitora ciclos e termina processos quando necessário; 3. Prevenção, ao negar uma das condições necessárias para o deadlock; 4. Algoritmo do banqueiro, que gerencia a alocação de recursos de forma a evitar deadlocks.",
+        "tag": "Sistemas Operacionais - Tratamento de Deadlocks"
+    },
+    {
+        "pergunta": "O que é starvation (inanição) em sistemas operacionais?",
+        "resposta": "Starvation é uma situação em que um processo nunca é executado porque processos de prioridade mais alta sempre o impedem de acessar os recursos necessários. Diferentemente do deadlock, o processo não está bloqueado por outro, mas sua execução é constantemente preterida.",
+        "tag": "Sistemas Operacionais - Starvation"
+    },
+    {
+        "pergunta": "Qual a diferença entre deadlock e starvation?",
+        "resposta": "Deadlock ocorre quando dois ou mais processos estão bloqueados, esperando por recursos que nunca serão liberados. Já a starvation acontece quando um processo é repetidamente preterido na alocação de recursos devido à existência de processos de maior prioridade, fazendo com que ele nunca seja executado.",
+        "tag": "Sistemas Operacionais - Deadlock vs Starvation"
+    },
+    {
+        "pergunta": "O que significa a condição de 'exclusão mútua' no contexto de deadlocks?",
+        "resposta": "Exclusão mútua significa que cada recurso em um sistema pode ser utilizado por apenas um processo de cada vez. Essa condição é uma das quatro necessárias para a ocorrência de deadlock, pois se vários processos pudessem acessar o mesmo recurso simultaneamente, o deadlock seria evitado.",
+        "tag": "Sistemas Operacionais - Exclusão Mútua"
+    },
+    {
+        "pergunta": "Como a condição de 'não-preempção' contribui para a ocorrência de deadlocks?",
+        "resposta": "A condição de não-preempção implica que, uma vez alocado, um recurso não pode ser retirado de um processo até que este o libere voluntariamente. Essa característica contribui para deadlocks, pois impede que outros processos obtenham o recurso de que precisam para continuar sua execução.",
+        "tag": "Sistemas Operacionais - Não-preempção"
+    },
+    {
+        "pergunta": "Qual a função da 'espera circular' na ocorrência de um deadlock?",
+        "resposta": "A espera circular é uma condição em que existe uma cadeia de processos, onde cada processo espera por um recurso retido pelo próximo na cadeia. Essa situação fecha o ciclo de dependência entre os processos, impedindo que qualquer um deles continue sua execução e resultando em deadlock.",
+        "tag": "Sistemas Operacionais - Espera Circular"
+    },
+    {
+        "pergunta": "O que é a normalização em banco de dados?",
+        "resposta": "A normalização é um conjunto de técnicas aplicáveis a uma tabela com o objetivo de corrigir erros de projeto, como anomalias de atualização, que podem incluir redundância de dados e dependências inadequadas. O processo envolve a decomposição de esquemas para satisfazer formas normais cada vez mais rigorosas, evitando anomalias de inclusão, exclusão e modificação.",
+        "tag": "Banco de Dados - Normalização"
+    },
+    {
+        "pergunta": "Quais são os principais tipos de anomalias de atualização em bancos de dados não-normalizados?",
+        "resposta": "As principais anomalias de atualização são: anomalias de inserção, onde a inclusão de um registro requer informações de outra tabela; anomalias de exclusão, onde a remoção de um dado afeta informações de outras tabelas; e anomalias de modificação, onde uma alteração em um dado exige a atualização de vários registros relacionados.",
+        "tag": "Banco de Dados - Anomalias de Atualização"
+    },
+    {
+        "pergunta": "O que caracteriza uma anomalia de inserção?",
+        "resposta": "Uma anomalia de inserção ocorre quando, ao incluir um novo registro, é necessário inserir informações relacionadas a outra tabela, ou preencher campos com valores nulos. Isso indica um problema de redundância e falta de normalização.",
+        "tag": "Banco de Dados - Anomalia de Inserção"
+    },
+    {
+        "pergunta": "Como ocorre uma anomalia de exclusão em bancos de dados?",
+        "resposta": "Uma anomalia de exclusão acontece quando, ao remover um registro de uma tabela, outras informações relevantes, que poderiam ser necessárias, também são removidas. Isso ocorre devido à redundância e à falta de organização adequada entre as tabelas.",
+        "tag": "Banco de Dados - Anomalia de Exclusão"
+    },
+    {
+        "pergunta": "O que é uma anomalia de modificação?",
+        "resposta": "A anomalia de modificação ocorre quando, ao alterar um dado em uma tabela, é necessário modificar o mesmo dado em várias outras linhas ou tabelas. Esse problema surge devido à redundância de dados e à falta de normalização.",
+        "tag": "Banco de Dados - Anomalia de Modificação"
+    },
+    {
+        "pergunta": "O que é a Primeira Forma Normal (1FN) em bancos de dados?",
+        "resposta": "A Primeira Forma Normal (1FN) exige que uma tabela não tenha grupos de repetição, atributos multivalorados ou compostos. Todos os atributos da tabela devem conter valores atômicos, ou seja, indivisíveis e simples.",
+        "tag": "Banco de Dados - Primeira Forma Normal (1FN)"
+    },
+    {
+        "pergunta": "Qual a definição de dependência funcional em um banco de dados?",
+        "resposta": "Dependência funcional ocorre quando o valor de uma coluna (atributo) em uma tabela é determinado pelo valor de outra coluna. Por exemplo, em uma tabela, se a coluna CPF determina unicamente a coluna Nome, diz-se que o Nome depende funcionalmente do CPF.",
+        "tag": "Banco de Dados - Dependência Funcional"
+    },
+    {
+        "pergunta": "O que caracteriza uma dependência funcional parcial?",
+        "resposta": "A dependência funcional parcial ocorre quando um atributo não chave depende apenas de parte da chave primária em uma tabela. Esse tipo de dependência é eliminado na Segunda Forma Normal (2FN).",
+        "tag": "Banco de Dados - Dependência Funcional Parcial"
+    },
+    {
+        "pergunta": "Qual a condição para que uma relação esteja na Segunda Forma Normal (2FN)?",
+        "resposta": "Uma relação está na Segunda Forma Normal (2FN) quando, além de estar na Primeira Forma Normal (1FN), todos os atributos não chave têm dependência funcional total em relação à chave primária da tabela.",
+        "tag": "Banco de Dados - Segunda Forma Normal (2FN)"
+    },
+    {
+        "pergunta": "O que é a decomposição de esquemas em um processo de normalização?",
+        "resposta": "A decomposição de esquemas é uma técnica usada na normalização para dividir tabelas que possuem dependências inadequadas ou redundâncias. O objetivo é evitar anomalias de atualização, como anomalias de inserção, exclusão e modificação.",
+        "tag": "Banco de Dados - Decomposição de Esquemas"
+    },
+    {
+        "pergunta": "O que caracteriza uma relação estar na Segunda Forma Normal (2FN)?",
+        "resposta": "Para uma relação estar na 2FN, ela deve primeiramente estar na 1FN e, além disso, todo atributo não-chave deve depender funcionalmente de toda a chave primária, ou seja, não pode haver dependências funcionais parciais.",
+        "tag": "Banco de Dados - Segunda Forma Normal"
+    },
+    {
+        "pergunta": "O que é uma dependência funcional parcial?",
+        "resposta": "Uma dependência funcional parcial ocorre quando um atributo depende apenas de parte de uma chave composta, em vez de depender da chave completa. Isso viola a 2FN, onde todo atributo não-chave deve depender da chave primária como um todo.",
+        "tag": "Banco de Dados - Dependência Funcional Parcial"
+    },
+    {
+        "pergunta": "Como uma tabela pode ser promovida para a Terceira Forma Normal (3FN)?",
+        "resposta": "Para que uma tabela esteja na 3FN, ela precisa primeiramente estar na 2FN e não deve conter dependências funcionais transitivas, ou seja, um atributo não-chave não pode depender de outro atributo não-chave.",
+        "tag": "Banco de Dados - Terceira Forma Normal"
+    },
+    {
+        "pergunta": "O que caracteriza uma dependência funcional transitiva?",
+        "resposta": "Uma dependência funcional transitiva ocorre quando um atributo A depende de B, e B depende de C, de modo que A acaba dependendo de C de forma indireta. Na 3FN, tais dependências não são permitidas.",
+        "tag": "Banco de Dados - Dependência Funcional Transitiva"
+    },
+    {
+        "pergunta": "Qual a definição da Forma Normal de Boyce-Codd (FNBC)?",
+        "resposta": "A FNBC é uma forma mais restritiva que a 3FN e exige que, para toda dependência funcional X → Y, o atributo X seja uma superchave. Ou seja, X deve ser capaz de identificar unicamente uma tupla da relação.",
+        "tag": "Banco de Dados - FNBC"
+    },
+    {
+        "pergunta": "Qual a diferença entre a 3FN e a FNBC?",
+        "resposta": "Toda relação que está na FNBC também está na 3FN, mas o inverso não é verdadeiro. A FNBC é mais restritiva, pois exige que toda dependência funcional tenha uma superchave como determinante.",
+        "tag": "Banco de Dados - FNBC"
+    },
+    {
+        "pergunta": "Em que situação uma tabela estaria violando a 3FN?",
+        "resposta": "Uma tabela viola a 3FN quando possui dependências transitivas, onde um atributo não-chave depende de outro atributo não-chave, como no exemplo em que 'CodVendedor' depende de 'NumPedido' e 'NomeVendedor' depende de 'CodVendedor'.",
+        "tag": "Banco de Dados - Violação 3FN"
+    },
+    {
+        "pergunta": "O que é uma superchave?",
+        "resposta": "Uma superchave é um conjunto de atributos que pode identificar unicamente cada tupla em uma relação. Ela pode ter mais atributos do que o necessário para identificar unicamente uma tupla, mas garante a unicidade.",
+        "tag": "Banco de Dados - Superchave"
+    },
+    {
+        "pergunta": "O que define a chave primária em uma tabela?",
+        "resposta": "A chave primária é a superchave de cardinalidade mínima, ou seja, o menor conjunto de atributos capaz de identificar unicamente cada tupla em uma tabela. Ela é usada para garantir a integridade e a unicidade dos dados.",
+        "tag": "Banco de Dados - Chave Primária"
+    },
+    {
+        "pergunta": "Quando uma tabela está na Primeira Forma Normal (1FN)?",
+        "resposta": "Uma tabela está na 1FN quando todos os seus atributos possuem valores atômicos, ou seja, cada campo contém um único valor, e não há repetição de grupos de atributos ou valores multivalorados.",
+        "tag": "Banco de Dados - Primeira Forma Normal"
+    },
+    {
+        "pergunta": "O que é um ponteiro em C?",
+        "resposta": "Um ponteiro é uma variável que armazena o endereço de outra variável, permitindo o acesso e modificação direta de dados na memória.",
+        "tag": "Linguagem C - Ponteiros"
+    },
+    {
+        "pergunta": "Qual é a principal função dos ponteiros na manipulação de memória?",
+        "resposta": "Os ponteiros são utilizados para manipulação direta da memória, permitindo acessar e modificar dados de forma eficiente e flexível.",
+        "tag": "Linguagem C - Ponteiros"
+    },
+    {
+        "pergunta": "Como os ponteiros são usados em estruturas de dados como listas encadeadas e árvores?",
+        "resposta": "Ponteiros são essenciais na implementação de estruturas dinâmicas de dados, como listas encadeadas e árvores, pois permitem a alocação dinâmica de memória e a interligação de elementos dessas estruturas.",
+        "tag": "Linguagem C - Estruturas de Dados com Ponteiros"
+    },
+    {
+        "pergunta": "Quais são os principais operadores usados com ponteiros e suas funções?",
+        "resposta": "Os dois principais operadores usados com ponteiros são: '&', que acessa o endereço de uma variável, e '*', que acessa o conteúdo do endereço armazenado pelo ponteiro.",
+        "tag": "Linguagem C - Ponteiros e Operadores"
+    },
+    {
+        "pergunta": "Qual é o tamanho de um ponteiro e de um inteiro em uma arquitetura de 64 bits?",
+        "resposta": "Em uma arquitetura de 64 bits, um ponteiro ocupa 8 bytes, enquanto um inteiro ocupa 4 bytes.",
+        "tag": "Linguagem C - Ponteiros em Arquitetura 64 bits"
+    },
+    {
+        "pergunta": "Como é representado um endereço de memória hexadecimal?",
+        "resposta": "Um endereço de memória em hexadecimal é composto por números de 0 a 9 e letras de 'a' a 'f', representando valores binários de uma sequência de bytes.",
+        "tag": "Linguagem C - Memória e Endereços"
+    },
+    {
+        "pergunta": "Qual a diferença entre passagem por valor e passagem por referência em funções C?",
+        "resposta": "Na passagem por valor, uma cópia do valor da variável é passada à função, sem alterar a variável original. Na passagem por referência, o endereço da variável é passado, permitindo que a função modifique o valor original.",
+        "tag": "Linguagem C - Valor vs Referência"
+    },
+    {
+        "pergunta": "Por que a passagem por referência é usada em C?",
+        "resposta": "A passagem por referência é usada para permitir que funções modifiquem o valor original de uma variável, o que é útil em situações onde se deseja alterar diretamente os dados ou economizar memória ao não fazer cópias.",
+        "tag": "Linguagem C - Passagem por Referência"
+    },
+    {
+        "pergunta": "Em que situações a passagem por valor pode ser preferível à passagem por referência?",
+        "resposta": "A passagem por valor pode ser preferível quando se deseja garantir que o valor original da variável não seja modificado pela função, aumentando a segurança e previsibilidade do código.",
+        "tag": "Linguagem C - Passagem por Valor"
+    },
+    {
+        "pergunta": "O que significa acessar o conteúdo de um endereço de memória com o operador '*' em C?",
+        "resposta": "O operador '*' em C é utilizado para acessar o valor armazenado no endereço de memória ao qual o ponteiro aponta, permitindo manipular diretamente os dados armazenados naquela posição.",
+        "tag": "Linguagem C - Operador *"
+    }
+]
